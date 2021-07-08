@@ -6,9 +6,7 @@ const supertest = require('supertest');
 let server, request, response;
 
 before((done) => {
-  console.log("Hello app");
   server = app.listen(done);
-  console.log(server);
   request = supertest.agent(server);
 });
 
