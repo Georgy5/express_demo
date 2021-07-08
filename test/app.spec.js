@@ -27,3 +27,16 @@ describe("GET /", () => {
     expect(response.text).to.equal('<h1>Hello Pluto!</h1>');
   });
 });
+
+describe("POST /", () => {
+  beforeEach(async () => {
+    response = await request.post("/").send({ name: "john" });
+  });
+
+  it("is expected to respond with a bit of JSON", () => {
+    actual_response = JSON.stringify(response.body);
+    expect(actual_response).to.equal(
+      JSON.stringify({ message: { name: "john" } })
+    );
+  });
+});
