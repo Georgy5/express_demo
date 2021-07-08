@@ -19,7 +19,7 @@ after((done) => {
 describe("GET /", () => {
   beforeEach(async () => {
     console.log(request);
-    response = await request.get("/?message=Uranus");
+    response = await request.get("/?message=Pluto");
   });
 
   it("is expected to respond with status 200", () => {
@@ -28,6 +28,6 @@ describe("GET /", () => {
   });
   
   it("is expected to respond with some HTML", () => {
-    expect(response.text).to.equal('<h1>Hello Uranus!</h1>');
+    expect(response.text).to.equal('<h1>Hello Pluto!</h1>');
   });
 });
