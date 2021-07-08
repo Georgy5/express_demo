@@ -16,12 +16,10 @@ after((done) => {
 
 describe("GET /", () => {
   beforeEach(async () => {
-    console.log(request);
     response = await request.get("/?message=Pluto");
   });
 
   it("is expected to respond with status 200", () => {
-    console.log("Hello");
     expect(response.status).to.equal(200);
   });
   
