@@ -18,3 +18,5 @@ app.post("/", (req, res) => {
 
 app.listen(port, () => console.warn(`Server is running on
 http://localhost:${port}!`))
+
+module.exports = app
