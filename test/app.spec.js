@@ -13,3 +13,17 @@ before((done) => {
 after((done) => {
   server.close(done);
 });
+
+describe("GET /", () => {
+  beforeEach(async () => {
+    response = await request.get("/?message=Uranus")
+  });
+
+  it("is expected to respond with status 200", () => {
+    expect(response.status).to.equal(200);
+  });
+
+  it("is expected to respond with some HTML", () => {
+    expect(response.text).to.equal('<h1>Hello Uranus!</h1>');
+  });
+});
