@@ -34,9 +34,8 @@ describe("POST /", () => {
   });
 
   it("is expected to respond with a bit of JSON", () => {
-    actual_response = JSON.stringify(response.body);
-    expect(actual_response).to.equal(
-      JSON.stringify({ message: { name: "john" } })
+    expect(response.body).to.deep.equal(
+      { message: { name: "john" } }
     );
   });
 });
